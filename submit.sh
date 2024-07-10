@@ -2,9 +2,8 @@
 #SBATCH --job-name="openmm"
 #SBATCH --partition=GPU
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=32
-#SBATCH --mem=256GB
-#SBATCH --gres=gpu:L40S:2
+#SBATCH --ntasks-per-node=16
+#SBATCH --gres=gpu:1
 #SBATCH --time=1:00:00
 
 module load singularity
