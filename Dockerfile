@@ -1,5 +1,7 @@
 FROM nvidia/cuda:12.5.0-runtime-ubuntu22.04
 
+LABEL maintainer="colby@tuple.xyz"
+
 ## Install dependencies
 RUN apt-get update && \
     apt-get install -y \
