@@ -24,13 +24,13 @@ RUN mkdir -p /software/openmm
 WORKDIR /software/openmm
 
 ## Install Miniconda
-ENV CONDA_DIR /opt/conda
+ENV CONDA_DIR=/opt/conda
 RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda
 ENV PATH=$CONDA_DIR/bin:$PATH
 
 ## Install OpenMM, etc.
-RUN conda install -c conda-forge openmm matplotlib -y
+RUN conda install -y -c conda-forge openmm matplotlib openmmforcefields pdbfixer
     # cudatoolkit=10.0
 
 ## Copy demo files

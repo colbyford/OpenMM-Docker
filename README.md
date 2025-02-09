@@ -1,5 +1,5 @@
 # OpenMM-Docker
-Docker image for OpenMM with GPU (CUDA) support for running molecular simulations at-scale.
+Docker image for [OpenMM](https://openmm.org/) with GPU (CUDA) support for running molecular simulations at-scale. It includes, Python libraries `openmm`, `pdbfixer`, and `openmmforcefields` along with the dependencies for CUDA 12.5.0.
 
 
 <h3 align="right">Colby T. Ford, Ph.D.</h3>
@@ -11,6 +11,7 @@ Build:
 ```bash
 docker build -t openmm --platform linux/amd64 .
 ```
+
 
 Push to Docker Hub:
 ```bash
@@ -30,7 +31,7 @@ Run:
 docker run -it --gpus all -v .:/mnt --name openmm cford38/openmm:cuda12.5.0
 ```
 
-Once in the container, you can run the "protein in water" demo: `python run_demo.py` 
+Once in the container, you can run the simple "protein in water" demo: `python run_demo.py` 
 
 
 ### Singularity
@@ -50,4 +51,4 @@ singularity run --nv openmm.sif /bin/bash
 ```
 
 #### Slurm Submission
-To submit a job in an HPC cluster, you can submit via Slurm using: `sbatch submit.sh`
+To submit a job in an HPC cluster, you can submit via Slurm using a shell script. For example, something like `sbatch submit.sh`.
